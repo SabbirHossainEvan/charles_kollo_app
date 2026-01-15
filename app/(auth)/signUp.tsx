@@ -77,6 +77,9 @@ export default function SignUp() {
                     {/* Sign Up Button */}
                     <TouchableOpacity
                       activeOpacity={0.8}
+                      onPress={() =>
+                        router.push("/(onboarding)/CountrySelection")
+                      }
                       className="w-full bg-[#c5a35d] h-14 rounded-2xl items-center justify-center mb-6 shadow-md"
                     >
                       <Text className="text-black text-lg font-bold">

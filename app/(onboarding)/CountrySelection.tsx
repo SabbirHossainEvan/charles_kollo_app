@@ -1,0 +1,178 @@
+import { countries, ICountry } from "countries-list";
+import { router } from "expo-router";
+import { ChevronDown, Search, X } from "lucide-react-native";
+import React, { useMemo, useState } from "react";
+import {
+  Dimensions,
+  FlatList,
+  Image,
+  ImageBackground,
+  Modal,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+const { height } = Dimensions.get("window");
+
+interface CountryData {
+  id: string;
+  name: string;
+  code: string;
+  flag: string;
+}
+
+const allAfricanCountries: CountryData[] = Object.keys(countries)
+  .reduce((acc: CountryData[], key) => {
+    const country = (countries as any)[key] as ICountry;
+
+    if (country.continent === "AF") {
+      acc.push({
+        id: key,
+        name: country.name,
+        code: key,
+        flag: `https://flagcdn.com/w160/${key.toLowerCase()}.png`,
+      });
+    }
+    return acc;
+  }, [])
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+export default function CountrySelection() {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState<CountryData>(
+    allAfricanCountries.find((c) => c.name === "Burkina Faso") ||
+      allAfricanCountries[0]
+  );
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // 2. Optimized Search Logic
+  const filteredCountries = useMemo(() => {
+    return allAfricanCountries.filter((c) =>
+      c.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery]);
+
+  return (
+    <View className="flex-1 ">
+      <ImageBackground
+        source={require("../../assets/images/Get started.png")}
+        className="flex-1"
+        resizeMode="cover"
+      >
+        <SafeAreaView className="flex-1 px-8 pt-10">
+          {/* Main Title */}
+          <Text className="text-white text-5xl font-bold mb-4 tracking-tight">
+            Select your Country
+          </Text>
+          <Text className="text-white/60 text-lg mb-12">
+            Market content may vary based on region.
+          </Text>
+
+          <Text className="text-white/90 text-sm font-semibold mb-3 ml-1 uppercase tracking-widest">
+            Country
+          </Text>
+
+          {/* Dropdown Selector */}
+          <TouchableOpacity
+            onPress={() => setModalVisible(true)}
+            activeOpacity={0.8}
+            className="w-full bg-[#2A2A2A] h-16 rounded-2xl px-5 flex-row items-center justify-between border border-white/10"
+          >
+            <View className="flex-row items-center">
+              <Image
+                source={{ uri: selectedCountry.flag }}
+                className="w-9 h-6 rounded-sm mr-4"
+                resizeMode="cover"
+              />
+              <Text className="text-white text-lg font-medium">
+                {selectedCountry.name}
+              </Text>
+            </View>
+            <ChevronDown size={22} color="#c5a35d" />
+          </TouchableOpacity>
+
+          {/* Continue Button */}
+          <View className="flex-1 justify-end pb-10">
+            <TouchableOpacity
+              className="w-full bg-[#c5a35d] h-14 rounded-2xl items-center justify-center shadow-2xl"
+              onPress={() => router.push("/(onboarding)/YourInterests")}
+            >
+              <Text className="text-black text-lg font-bold">Continue</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+
+        {/* Dynamic Country Search Modal */}
+        <Modal animationType="slide" transparent={true} visible={modalVisible}>
+          <View className="flex-1 bg-black/80 justify-end">
+            <View
+              className="bg-[#1A1A1A] rounded-t-[40px] px-6 pt-6"
+              style={{ height: height * 0.85 }}
+            >
+              <View className="flex-row items-center justify-between mb-6 px-2">
+                <Text className="text-white text-2xl font-bold">
+                  Select your Country
+                </Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    setModalVisible(false);
+                    setSearchQuery("");
+                  }}
+                >
+                  <X size={24} color="white" />
+                </TouchableOpacity>
+              </View>
+
+              {/* Search Bar */}
+              <View className="bg-[#2A2A2A] h-14 rounded-2xl flex-row items-center px-4 mb-6 border border-white/5">
+                <Search size={20} color="#888" />
+                <TextInput
+                  placeholder="Search..."
+                  placeholderTextColor="#666"
+                  className="flex-1 text-white ml-3 text-base"
+                  value={searchQuery}
+                  onChangeText={setSearchQuery}
+                />
+              </View>
+
+              <Text className="text-white/40 text-sm font-bold mb-4 ml-2 uppercase tracking-widest">
+                Africa
+              </Text>
+
+              <FlatList
+                data={filteredCountries}
+                keyExtractor={(item) => item.id}
+                showsVerticalScrollIndicator={false}
+                renderItem={({ item }) => (
+                  <TouchableOpacity
+                    onPress={() => {
+                      setSelectedCountry(item);
+                      setModalVisible(false);
+                      setSearchQuery("");
+                    }}
+                    className={`flex-row items-center p-4 rounded-2xl mb-2 ${
+                      selectedCountry.id === item.id ? "bg-[#c5a35d]/20" : ""
+                    }`}
+                  >
+                    <Image
+                      source={{ uri: item.flag }}
+                      className="w-8 h-5 rounded-sm mr-4"
+                    />
+                    <Text
+                      className={`text-lg ${selectedCountry.id === item.id ? "text-[#c5a35d] font-bold" : "text-white/90"}`}
+                    >
+                      {item.name}
+                    </Text>
+                  </TouchableOpacity>
+                )}
+              />
+            </View>
+          </View>
+        </Modal>
+      </ImageBackground>
+    </View>
+  );
+}
