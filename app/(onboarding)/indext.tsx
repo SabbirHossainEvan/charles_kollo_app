@@ -34,7 +34,7 @@ export default function Onboarding() {
               <Text
                 className="text-white text-5xl font-bold text-center tracking-tight"
                 style={{
-                  fontFamily: "System",
+                  fontFamily: "Oswald-Regular",
                   includeFontPadding: false,
                 }}
               >

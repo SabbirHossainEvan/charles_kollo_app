@@ -32,14 +32,23 @@ export default function Onboarding() {
               </View>
 
               {/* Main Title */}
-              <Text className="text-white text-4xl font-bold text-center tracking-tight mb-3">
+              <Text
+                className="text-white text-4xl font-bold text-center tracking-tight mb-3"
+                style={{ fontFamily: "Oswald-Regular" }}
+              >
                 Charles Kollo
               </Text>
 
-              <Text className="text-white/90 text-[18px] text-center font-medium leading-6 px-4 mt-3">
+              <Text
+                className="text-white/90 text-[18px] text-center font-medium leading-6 px-4 mt-3"
+                style={{ fontFamily: "Inter-Regular" }}
+              >
                 Learn. Simulate. Understand
               </Text>
-              <Text className="text-white/90 text-[18px] text-center font-medium leading-6 px-4">
+              <Text
+                className="text-white/90 text-[18px] text-center font-medium leading-6 px-4"
+                style={{ fontFamily: "Inter-Regular" }}
+              >
                 African Markets.
               </Text>
             </View>
@@ -50,18 +59,27 @@ export default function Onboarding() {
                 onPress={() => router.push("/(auth)/signUp")}
                 className="w-full bg-[#D4B475] h-14 rounded-2xl items-center justify-center mb-6 shadow-lg"
               >
-                <Text className="text-black text-lg font-bold">
+                <Text
+                  className="text-black text-lg font-bold"
+                  style={{ fontFamily: "Inter-Bold" }}
+                >
                   Get started
                 </Text>
               </TouchableOpacity>
 
               {/* Login Link */}
               <View className="flex-row items-center">
-                <Text className="text-white/70 text-base">
+                <Text
+                  className="text-white/70 text-base"
+                  style={{ fontFamily: "Inter-Regular" }}
+                >
                   Already have an account?{" "}
                 </Text>
                 <TouchableOpacity onPress={() => router.push("/(auth)/signIn")}>
-                  <Text className="text-[#D4B475] text-base font-bold">
+                  <Text
+                    className="text-[#D4B475] text-base font-bold"
+                    style={{ fontFamily: "Inter-Regular" }}
+                  >
                     Sign in
                   </Text>
                 </TouchableOpacity>

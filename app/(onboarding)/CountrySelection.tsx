@@ -107,13 +107,20 @@ export default function CountrySelection() {
 
         {/* Dynamic Country Search Modal */}
         <Modal animationType="slide" transparent={true} visible={modalVisible}>
-          <View className="flex-1 bg-black/80 justify-end">
+          <View className="flex-1  justify-end">
             <View
-              className="bg-[#1A1A1A] rounded-t-[40px] px-6 pt-6"
-              style={{ height: height * 0.85 }}
+              className=" bg-[#333333] rounded-t-[40px] px-6 pt-6"
+              style={{
+                height: height * 0.85,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+              }}
             >
               <View className="flex-row items-center justify-between mb-6 px-2">
-                <Text className="text-white text-2xl font-bold">
+                <Text
+                  className="text-white text-2xl font-bold"
+                  style={{ fontFamily: "Oswald-Regular" }}
+                >
                   Select your Country
                 </Text>
                 <TouchableOpacity
@@ -127,7 +134,7 @@ export default function CountrySelection() {
               </View>
 
               {/* Search Bar */}
-              <View className="bg-[#2A2A2A] h-14 rounded-2xl flex-row items-center px-4 mb-6 border border-white/5">
+              <View className=" bg-[#1A1A1A] h-14 rounded-2xl flex-row items-center px-4 mb-6 border border-white/5">
                 <Search size={20} color="#888" />
                 <TextInput
                   placeholder="Search..."
@@ -138,37 +145,39 @@ export default function CountrySelection() {
                 />
               </View>
 
-              <Text className="text-white/40 text-sm font-bold mb-4 ml-2 uppercase tracking-widest">
-                Africa
-              </Text>
-
-              <FlatList
-                data={filteredCountries}
-                keyExtractor={(item) => item.id}
-                showsVerticalScrollIndicator={false}
-                renderItem={({ item }) => (
-                  <TouchableOpacity
-                    onPress={() => {
-                      setSelectedCountry(item);
-                      setModalVisible(false);
-                      setSearchQuery("");
-                    }}
-                    className={`flex-row items-center p-4 rounded-2xl mb-2 ${
-                      selectedCountry.id === item.id ? "bg-[#c5a35d]/20" : ""
-                    }`}
-                  >
-                    <Image
-                      source={{ uri: item.flag }}
-                      className="w-8 h-5 rounded-sm mr-4"
-                    />
-                    <Text
-                      className={`text-lg ${selectedCountry.id === item.id ? "text-[#c5a35d] font-bold" : "text-white/90"}`}
+              <View className="bg-[#1A1A1A] rounded-t-[30px]">
+                <Text className="text-white mt-6  text-2xl font-bold  mx-4  tracking-widest">
+                  Africa
+                </Text>
+                <View className="w-full h-[1px] bg-white/10 my-4" />
+                <FlatList
+                  data={filteredCountries}
+                  keyExtractor={(item) => item.id}
+                  showsVerticalScrollIndicator={false}
+                  renderItem={({ item }) => (
+                    <TouchableOpacity
+                      onPress={() => {
+                        setSelectedCountry(item);
+                        setModalVisible(false);
+                        setSearchQuery("");
+                      }}
+                      className={`flex-row items-center border-b border-gray-600 p-4   ${
+                        selectedCountry.id === item.id ? "bg-[#D4B475]" : ""
+                      }`}
                     >
-                      {item.name}
-                    </Text>
-                  </TouchableOpacity>
-                )}
-              />
+                      <Image
+                        source={{ uri: item.flag }}
+                        className="w-8 h-5 rounded-sm mr-4"
+                      />
+                      <Text
+                        className={`text-lg ${selectedCountry.id === item.id ? "text-white/90 font-bold" : "text-white/90"}`}
+                      >
+                        {item.name}
+                      </Text>
+                    </TouchableOpacity>
+                  )}
+                />
+              </View>
             </View>
           </View>
         </Modal>
