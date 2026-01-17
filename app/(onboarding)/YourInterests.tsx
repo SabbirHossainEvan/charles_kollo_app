@@ -139,7 +139,6 @@ export default function YourInterests() {
 
   return (
     <View className="flex-1 ">
-      {/* Background Texture */}
       <ImageBackground
         source={require("../../assets/images/Get started.png")}
         className="flex-1"
@@ -148,10 +147,13 @@ export default function YourInterests() {
         <SafeAreaView className="flex-1">
           <View className="flex-1 px-6 pt-6">
             {/* Header Section */}
-            <Text className="text-white text-5xl font-bold mb-4 tracking-tight">
+            <Text
+              className="text-white text-5xl font-semibold mb-4 tracking-tight"
+              style={{ fontFamily: "Oswald-Regular" }}
+            >
               Your Interests
             </Text>
-            <Text className="text-white/60 text-lg leading-6 mb-8">
+            <Text className="text-white text-lg leading-6 mb-8">
               Choose African countries stock exchanges you d like to follow.
             </Text>
 

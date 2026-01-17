@@ -1,7 +1,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-// 1. Local image path-ke require diye define korte hoy
 const TRADE_DATA = [
   {
     id: "1",
@@ -10,7 +9,7 @@ const TRADE_DATA = [
     price: "$12,566",
     change: "0.13%",
     trend: "up",
-    // REQUIRE use korun local assets-er jonno
+
     image: require("../assets/images/avatar.png"),
   },
   {

@@ -47,7 +47,7 @@ export default function SignInScreen({ isSignUp = false }) {
                 >
                   <Text
                     className="text-white text-4xl font-bold tracking-tight text-left self-start"
-                    style={{ fontFamily: "Oswald-Bold" }}
+                    style={{ fontFamily: "Oswald-Regular" }}
                   >
                     Sign In
                   </Text>

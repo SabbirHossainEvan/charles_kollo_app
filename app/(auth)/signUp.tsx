@@ -19,7 +19,6 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-  // ✅ Focus states for Border Color change
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isPhoneFocused, setIsPhoneFocused] = useState(false);
 
@@ -80,7 +79,7 @@ export default function SignUp() {
                   {/* Phone Number Field */}
                   <View className="w-full">
                     <Text
-                      className="text-white/90 text-[16px] font-medium mb-3 ml-1 text-left"
+                      className="text-white/90 text-[12px] font-medium mb-3 ml-1 text-left"
                       style={{ fontFamily: "Inter-Regular" }}
                     >
                       Phone number
