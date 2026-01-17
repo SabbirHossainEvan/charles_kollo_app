@@ -52,11 +52,14 @@ const WatchlistSection = () => {
   const renderItem = ({ item }: { item: StockItem }) => (
     <TouchableOpacity
       activeOpacity={0.7}
-      className="bg-[#1A1A1A] mb-3 p-5 rounded-[20px] flex-row justify-between items-center border border-[#2A2A2A]"
+      className="bg-[#232323] mb-3 p-5 rounded-[15px] flex-row justify-between items-center border border-[#2A2A2A]"
     >
       <View className="flex-row items-center">
         <Star size={22} color="#888" strokeWidth={1.5} />
-        <Text className="text-white text-lg font-semibold ml-4">
+        <Text
+          className="text-white text-lg font-semibold ml-4"
+          style={{ fontFamily: "Oswald-Regular" }}
+        >
           {item.symbol}
         </Text>
       </View>

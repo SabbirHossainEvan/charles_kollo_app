@@ -19,7 +19,10 @@ const CourseCard = ({ item }: { item: Course }) => {
   return (
     <View className="rounded-2xl p-6 mb-4 border border-gray-800 bg-[#232323]">
       <View className="flex-row justify-between items-start mb-2">
-        <Text className="text-white text-xl font-semibold flex-1 mr-4 leading-7">
+        <Text
+          className="text-white text-xl font-semibold flex-1 mr-4 leading-7"
+          style={{ fontFamily: "Oswald-Regular" }}
+        >
           {item.title}
         </Text>
         <TouchableOpacity activeOpacity={0.7}>

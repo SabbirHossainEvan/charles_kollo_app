@@ -26,7 +26,12 @@ const AccountBalanceCard: React.FC<AccountBalanceProps> = ({
       {/* Main Card Body */}
       <View className="bg-[#D9B97A] w-full rounded-2xl rounded-tr-none p-6 shadow-sm">
         <View className="flex-row justify-between items-start mb-4">
-          <Text className="text-gray-800 text-lg font-medium">Total Value</Text>
+          <Text
+            className="text-gray-800 text-2xl font-medium"
+            style={{ fontFamily: "Oswald-Regular" }}
+          >
+            Total Value
+          </Text>
 
           {/* Menu Dots */}
           <TouchableOpacity
@@ -41,7 +46,10 @@ const AccountBalanceCard: React.FC<AccountBalanceProps> = ({
 
         {/* Amount and Percentage */}
         <View className="flex-row items-center flex-wrap">
-          <Text className="text-4xl font-bold text-black mr-3">
+          <Text
+            className="text-4xl font-semibold text-black mr-3"
+            style={{ fontFamily: "Oswald-Regular" }}
+          >
             ${totalValue}
           </Text>
 

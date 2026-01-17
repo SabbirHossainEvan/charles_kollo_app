@@ -37,7 +37,7 @@ const ProgressCard: React.FC<ProgressCardProps> = ({
         colors={["#F6D697", "#C9A96A"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
-        className="rounded-3xl p-6 relative overflow-hidden shadow-sm"
+        className="rounded-2xl p-6 relative overflow-hidden shadow-sm"
       >
         <Image
           source={require("../assets/images/Group 186.png")}
@@ -47,11 +47,17 @@ const ProgressCard: React.FC<ProgressCardProps> = ({
 
         {/* Content Section */}
         <View className="z-10">
-          <Text className="text-black text-lg font-medium opacity-70">
+          <Text
+            className="text-black text-lg font-bold opacity-70"
+            style={{ fontFamily: "Oswald-Regular" }}
+          >
             Your progress
           </Text>
 
-          <Text className="text-black text-4xl font-semibold my-2">
+          <Text
+            className="text-black text-4xl font-semibold my-2"
+            style={{ fontFamily: "Oswald-Regular" }}
+          >
             {percentage}%
           </Text>
 
@@ -60,11 +66,11 @@ const ProgressCard: React.FC<ProgressCardProps> = ({
           </Text>
 
           {/* Progress Bar Track */}
-          <View className="h-2.5 w-full bg-black/10 rounded-full overflow-hidden">
+          <View className="h-2.5 w-full bg-[#272A33] rounded-full overflow-hidden">
             <Animated.View
               style={{
                 height: "100%",
-                backgroundColor: "#00C853",
+                backgroundColor: "#00C441",
                 width: progressWidth,
                 borderRadius: 10,
               }}

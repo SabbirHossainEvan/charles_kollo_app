@@ -53,10 +53,13 @@ const PerformanceChart = () => {
   if (chartData.length === 0) return null;
 
   return (
-    <View className="bg-[#111111] p-5 rounded-[14px] w-full">
+    <View className="bg-[#242424] p-5 rounded-[13px] w-full">
       {/* Header & Filter Buttons */}
       <View className="flex-row justify-between items-center mb-6">
-        <Text className="text-white text-xl font-semibold tracking-tight">
+        <Text
+          className="text-white text-xl font-semibold tracking-tight"
+          style={{ fontFamily: "Oswald-Regular" }}
+        >
           Performance
         </Text>
         <View className="flex-row rounded-xl p-1">
@@ -103,7 +106,7 @@ const PerformanceChart = () => {
         {getLabels().map((label) => (
           <Text
             key={label}
-            className="text-[#d6d6d6] font-medium uppercase"
+            className="text-[#d6d6d6] font-medium "
             style={{ fontSize: selectedFrame === "1Y" ? 9 : 10 }}
           >
             {label}

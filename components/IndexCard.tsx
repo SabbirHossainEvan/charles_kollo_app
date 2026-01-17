@@ -23,15 +23,13 @@ const IndexCard: React.FC<IndexCardProps> = ({
         isActive ? "border-[#c5a35d]" : "border-white/5"
       } bg-[#1a1a1a]`}
     >
-      {/* Index Name */}
-      <Text className="text-white/50 text-[10px] uppercase font-bold tracking-widest">
+      <Text className="text-white text-[14px] uppercase font-bold tracking-widest">
         {name}
       </Text>
 
       {/* Index Value */}
       <Text className="text-white text-lg font-bold mt-1">${value}</Text>
 
-      {/* Change Percentage with Icon */}
       <View className="flex-row items-center mt-1">
         {isPositive ? (
           <TrendingUp size={12} color="#22c55e" />

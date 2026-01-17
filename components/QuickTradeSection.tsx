@@ -35,7 +35,12 @@ const TRADE_DATA = [
 const QuickTradeSection = () => {
   return (
     <View className="px-4 mt-6 pb-10">
-      <Text className="text-white text-2xl font-bold mb-4">Quick Trade</Text>
+      <Text
+        className="text-white text-2xl mb-4"
+        style={{ fontFamily: "Oswald-Regular" }}
+      >
+        Quick Trade
+      </Text>
 
       {TRADE_DATA.map((item) => (
         <TouchableOpacity
@@ -53,10 +58,16 @@ const QuickTradeSection = () => {
               />
             </View>
             <View>
-              <Text className="text-white text-lg font-bold tracking-tight">
+              <Text
+                className="text-white text-lg font-bold "
+                style={{ fontFamily: "Oswald-Regular" }}
+              >
                 {item.name}
               </Text>
-              <Text className="text-gray-500 text-[11px]  tracking-widest">
+              <Text
+                className="text-gray-500 text-[11px]"
+                style={{ fontFamily: "Oswald-Regular" }}
+              >
                 {item.ticker}
               </Text>
             </View>

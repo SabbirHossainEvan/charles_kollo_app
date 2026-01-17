@@ -16,8 +16,16 @@ const WatchlistHeader = () => {
 
       <View className="flex-row justify-between items-center">
         <View>
-          <Text className="text-white text-3xl font-bold">Watchlist</Text>
-          <Text className="text-gray-400 text-base mt-1">
+          <Text
+            className="text-white text-3xl"
+            style={{ fontFamily: "Oswald-Bold" }}
+          >
+            Watchlist
+          </Text>
+          <Text
+            className="text-gray-400 text-base mt-1"
+            style={{ fontFamily: "Inter-Regular" }}
+          >
             Track stocks you re interested in
           </Text>
         </View>

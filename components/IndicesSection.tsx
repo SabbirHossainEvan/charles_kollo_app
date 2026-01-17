@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import IndexCard from "./IndexCard";
 
-// Data gulo ekhane niye asha holo
 const INITIAL_INDICES = [
   {
     id: "1",
@@ -73,7 +72,7 @@ const IndicesSection: React.FC<IndicesSectionProps> = ({
       {/* Header Row */}
       <View className="flex-row justify-between items-center mb-4">
         <Text
-          className="text-white text-2xl font-bold"
+          className="text-white text-2xl "
           style={{ fontFamily: "Oswald-Regular" }}
         >
           Indices
@@ -90,7 +89,6 @@ const IndicesSection: React.FC<IndicesSectionProps> = ({
       </View>
 
       {showAll ? (
-        /* View All Mode (Grid) */
         <View className="flex-row flex-wrap justify-between">
           {indicesToShow.map((item) => (
             <TouchableOpacity

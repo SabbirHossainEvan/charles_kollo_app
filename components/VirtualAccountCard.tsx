@@ -23,7 +23,7 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
     <View className="mx-4 mt-6">
       {/* 1. Top Tab Section */}
       <View className="flex-row justify-end">
-        <View className="bg-[#C9A96A] px-6 py-2 rounded-t-[20px]">
+        <View className="bg-[#C9A96A] px-6 py-2 rounded-t-[15px]">
           <Text className="text-black text-[11px] font-bold tracking-tight">
             VIRTUAL ACCOUNT
           </Text>
@@ -31,14 +31,13 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
       </View>
 
       {/* 2. Main Card with Linear Gradient */}
-      <View className="overflow-hidden rounded-3xl rounded-tr-none shadow-2xl">
+      <View className="overflow-hidden rounded-lg rounded-tr-none shadow-2xl">
         <LinearGradient
           colors={["#F6D697", "#C9A96A"]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
-          className="p-6 relative"
+          className="px-4 py-4 relative"
         >
-          {/* Glass Image with Limited Width (Right Side) */}
           <Image
             source={require("../assets/images/Group 186.png")}
             style={{
@@ -55,11 +54,14 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
           {/* Header Info & Balance */}
           <View className="flex-row justify-between items-start">
             <View>
-              <Text className="text-black/80 text-lg font-semibold">
+              <Text
+                className="text-black/80 text-lg font-semibold"
+                style={{ fontFamily: "Oswald-Regular" }}
+              >
                 Market overview
               </Text>
               <View className="flex-row items-center mt-3">
-                <Text className="text-black text-4xl font-bold tracking-tighter">
+                <Text className="text-black text-3xl font-semibold tracking-tighter">
                   ${balance}
                 </Text>
 
@@ -88,9 +90,9 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
               <TouchableOpacity
                 key={index}
                 activeOpacity={0.9}
-                className="bg-[#1A1A1A] w-[22%] h-14 rounded-[18px] items-center justify-center"
+                className="bg-[#1A1A1A] w-[22%] h-12 rounded-[12px] items-center justify-center"
               >
-                <item.icon color="#C5A35D" size={24} strokeWidth={2} />
+                <item.icon color="#ffffff" size={18} strokeWidth={2} />
               </TouchableOpacity>
             ))}
           </View>
