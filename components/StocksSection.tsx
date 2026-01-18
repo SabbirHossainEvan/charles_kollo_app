@@ -232,12 +232,12 @@ export default function StocksSection() {
   return (
     <View className="px-4 mt-8 pb-24">
       <View className="flex-row justify-between items-center mb-5">
-        <Text className="text-white text-xl font-bold italic">Stocks</Text>
+        <Text className="text-white text-xl font-bold ">Stocks</Text>
         <Text className="text-white/40 text-sm">View all ›</Text>
       </View>
 
       <View className="flex-row items-center justify-between mb-6">
-        <View className="flex-row bg-[#1A1A1A] rounded-full p-1 flex-1 mr-4 border border-white/5">
+        <View className="flex-row  p-1 flex-1 mr-4">
           {["All", "Popular", "Trending"].map((tab) => (
             <TouchableOpacity
               key={tab}

@@ -62,6 +62,7 @@ const ProfileScreen = () => {
         icon={
           <MaterialCommunityIcons name="creation" size={22} color="white" />
         }
+        onPress={() => router.push("/(screens)/AIAssistant")}
       />
       <SettingItem
         title="Community"
@@ -72,6 +73,7 @@ const ProfileScreen = () => {
       <SettingItem
         title="Profile"
         icon={<Feather name="user" size={22} color="white" />}
+        onPress={() => router.push("/(tabs)/Profile")}
       />
       <SettingItem
         title="Notifications & Alerts"

@@ -45,13 +45,19 @@ const AccountSettingsScreen = () => {
             </TouchableOpacity>
             <Text
               className="text-white text-2xl font-semibold"
-              style={{ fontFamily: "Oswald-Regular" }}
+              style={{ fontFamily: "Inter-Regular" }}
             >
               Account
             </Text>
           </View>
+
           <TouchableOpacity>
-            <Feather name="paperclip" size={22} color="white" />
+            <Feather
+              name="tag"
+              size={24}
+              color="white"
+              style={{ transform: [{ rotate: "90deg" }] }}
+            />
           </TouchableOpacity>
         </View>
 
@@ -64,7 +70,7 @@ const AccountSettingsScreen = () => {
             Account
           </Text>
 
-          <View className="bg-[#1C1C1E]/80 rounded-[20px] overflow-hidden">
+          <View className="bg-[#1C1C1E]/80 rounded-[15px] overflow-hidden">
             {/* Virtual Account Row */}
             <View className="flex-row items-center justify-between px-5 py-5 border-b border-white/5">
               <Text className="text-white text-lg font-medium">

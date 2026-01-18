@@ -1,4 +1,5 @@
 import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 import { ArrowRight, Sparkles } from "lucide-react-native";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
@@ -12,10 +13,18 @@ const InsightBar: React.FC<InsightBarProps> = ({
   text = "What happened in the markets in Senegal today?",
   onPress,
 }) => {
+  const handlePress = () => {
+    if (onPress) {
+      onPress();
+    } else {
+      router.push("/(screens)/AIAssistant");
+    }
+  };
+
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      onPress={onPress}
+      onPress={handlePress}
       className="mx-4 mt-4 rounded-xl border border-white/10 overflow-hidden"
     >
       <LinearGradient

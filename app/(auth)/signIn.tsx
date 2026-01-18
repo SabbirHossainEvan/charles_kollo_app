@@ -25,7 +25,7 @@ export default function SignInScreen({ isSignUp = false }) {
   return (
     <View className="flex-1 bg-black">
       <ImageBackground
-        source={require("../../assets/images/Get started.png")}
+        source={require("../../assets/images/bgImag.png")}
         className="flex-1"
         resizeMode="cover"
       >
