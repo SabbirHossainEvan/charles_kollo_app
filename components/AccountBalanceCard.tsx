@@ -16,14 +16,12 @@ const AccountBalanceCard: React.FC<AccountBalanceProps> = ({
 }) => {
   return (
     <View className="w-full p-4 items-end">
-      {/* Top Tab Label */}
       <View className="bg-[#D9B97A] px-4 py-2 rounded-t-2xl">
         <Text className="text-[11px] font-bold tracking-[1px] text-black">
           {label}
         </Text>
       </View>
 
-      {/* Main Card Body */}
       <View className="bg-[#D9B97A] w-full rounded-2xl rounded-tr-none p-6 shadow-sm">
         <View className="flex-row justify-between items-start mb-4">
           <Text
@@ -33,7 +31,6 @@ const AccountBalanceCard: React.FC<AccountBalanceProps> = ({
             Total Value
           </Text>
 
-          {/* Menu Dots */}
           <TouchableOpacity
             onPress={onPressMenu}
             className="flex-row space-x-1 p-1 gap-1"
@@ -44,7 +41,6 @@ const AccountBalanceCard: React.FC<AccountBalanceProps> = ({
           </TouchableOpacity>
         </View>
 
-        {/* Amount and Percentage */}
         <View className="flex-row items-center flex-wrap">
           <Text
             className="text-4xl font-semibold text-black mr-3"

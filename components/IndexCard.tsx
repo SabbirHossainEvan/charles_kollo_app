@@ -27,7 +27,6 @@ const IndexCard: React.FC<IndexCardProps> = ({
         {name}
       </Text>
 
-      {/* Index Value */}
       <Text className="text-white text-lg font-bold mt-1">${value}</Text>
 
       <View className="flex-row items-center mt-1">

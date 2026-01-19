@@ -1,6 +1,7 @@
 import CourseList from "@/components/CourseList";
-import Header from "@/components/Header";
+
 import InsightBar from "@/components/InsightBar";
+import LearnHeader from "@/components/LearnHeader";
 import ProgressCard from "@/components/ProgressCard";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
@@ -17,7 +18,7 @@ export default function More() {
     >
       <SafeAreaView className="flex-1" edges={["top"]}>
         <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
-          <Header userName="Noah" />
+          <LearnHeader />
           <InsightBar />
           <ProgressCard />
           <View className="">

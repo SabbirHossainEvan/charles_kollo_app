@@ -54,7 +54,6 @@ const PerformanceChart = () => {
 
   return (
     <View className="bg-[#242424] p-5 rounded-[13px] w-full">
-      {/* Header & Filter Buttons */}
       <View className="flex-row justify-between items-center mb-6">
         <Text
           className="text-white text-xl font-semibold tracking-tight"
@@ -101,7 +100,6 @@ const PerformanceChart = () => {
         </View>
       </View>
 
-      {/* Dynamic X-Axis Display */}
       <View className="flex-row justify-between ml-10 mt-4 px-1">
         {getLabels().map((label) => (
           <Text

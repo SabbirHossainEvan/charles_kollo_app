@@ -106,7 +106,6 @@ const IndicesSection: React.FC<IndicesSectionProps> = ({
           ))}
         </View>
       ) : (
-        /* Carousel Mode */
         <View>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {indicesToShow.map((item) => (
@@ -125,7 +124,6 @@ const IndicesSection: React.FC<IndicesSectionProps> = ({
             ))}
           </ScrollView>
 
-          {/* Dynamic Carousel Indicator */}
           <View className="flex-row justify-center items-center mt-6">
             {INITIAL_INDICES.map((item) => (
               <View

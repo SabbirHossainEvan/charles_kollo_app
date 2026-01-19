@@ -2,7 +2,6 @@ import { Feather } from "@expo/vector-icons";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-// Data Structure
 interface Course {
   id: string;
   title: string;
@@ -49,7 +48,6 @@ const CourseCard = ({ item }: { item: Course }) => {
         </Text>
       </View>
 
-      {/* Dynamic Progress Bar */}
       <View className="h-2 w-full bg-gray-800/50 rounded-full overflow-hidden">
         <View
           className="h-full bg-[#FDCE4C]"

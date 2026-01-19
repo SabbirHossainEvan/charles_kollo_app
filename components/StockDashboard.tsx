@@ -51,7 +51,6 @@ const StockDashboard = () => {
       </View>
 
       <View className="flex-row justify-between">
-        {/* Gainers Card - */}
         <View className="w-[48%] overflow-hidden rounded-[20px]">
           <LinearGradient
             colors={gradientColors}
@@ -78,7 +77,6 @@ const StockDashboard = () => {
           </LinearGradient>
         </View>
 
-        {/* Losers Card - */}
         <View className="w-[48%] overflow-hidden rounded-[20px]">
           <LinearGradient
             colors={gradientColors}

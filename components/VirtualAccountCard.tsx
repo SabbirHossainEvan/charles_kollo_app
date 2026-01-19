@@ -21,7 +21,6 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
 }) => {
   return (
     <View className="mx-4 mt-6">
-      {/* 1. Top Tab Section */}
       <View className="flex-row justify-end">
         <View className="bg-[#C9A96A] px-6 py-2 rounded-t-[15px]">
           <Text className="text-black text-[11px] font-bold tracking-tight">
@@ -30,7 +29,6 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
         </View>
       </View>
 
-      {/* 2. Main Card with Linear Gradient */}
       <View className="overflow-hidden rounded-lg rounded-tr-none shadow-2xl">
         <LinearGradient
           colors={["#F6D697", "#C9A96A"]}
@@ -51,7 +49,6 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
             resizeMode="cover"
           />
 
-          {/* Header Info & Balance */}
           <View className="flex-row justify-between items-start">
             <View>
               <Text
@@ -65,7 +62,6 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
                   ${balance}
                 </Text>
 
-                {/* Percentage Badge */}
                 <View className="bg-[#E6FFF2] px-3 py-1 rounded-full ml-4">
                   <Text className="text-[#00C076] text-[12px] font-bold">
                     +{change}%
@@ -79,7 +75,6 @@ const VirtualAccountCard: React.FC<VirtualAccountCardProps> = ({
             </TouchableOpacity>
           </View>
 
-          {/* Action Buttons */}
           <View className="flex-row justify-between mt-6">
             {[
               { icon: ArrowUpRight, id: "send" },

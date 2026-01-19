@@ -34,7 +34,6 @@ const InsightBar: React.FC<InsightBarProps> = ({
         className="flex-row items-center justify-between px-4 py-[14px]"
       >
         <View className="flex-row items-center flex-1">
-          {/* Gold Sparkle Icon */}
           <View className="mr-2.5">
             <Sparkles
               size={18}
@@ -44,7 +43,6 @@ const InsightBar: React.FC<InsightBarProps> = ({
             />
           </View>
 
-          {/* Insight Text */}
           <Text
             numberOfLines={1}
             className="text-white/80 text-[13px] font-medium flex-1"
@@ -53,7 +51,6 @@ const InsightBar: React.FC<InsightBarProps> = ({
           </Text>
         </View>
 
-        {/* Arrow Icon */}
         <ArrowRight size={18} color="white" opacity={0.6} />
       </LinearGradient>
     </TouchableOpacity>

@@ -9,7 +9,7 @@ interface StockItemProps {
   price: string;
   change: string;
   isPositive?: boolean;
-  logoUrl?: string; // Optional image URL
+  logoUrl?: string;
   onPress?: () => void;
 }
 
@@ -30,7 +30,6 @@ const StockItem: React.FC<StockItemProps> = ({
       className="flex-row items-center justify-between p-4 bg-[#1a1a1a] rounded-2xl mb-3 border border-white/5"
     >
       <View className="flex-row items-center flex-1">
-        {/* Stock Logo/Avatar */}
         <View className="w-12 h-12 bg-[#262626] rounded-full items-center justify-center mr-3 overflow-hidden">
           {logoUrl ? (
             <Image
@@ -39,7 +38,6 @@ const StockItem: React.FC<StockItemProps> = ({
               resizeMode="cover"
             />
           ) : (
-            // Fallback logo placeholder
             <View className="bg-red-900/20 w-full h-full items-center justify-center">
               <Text className="text-red-500 font-bold text-xs">
                 {symbol.substring(0, 2)}
@@ -48,7 +46,6 @@ const StockItem: React.FC<StockItemProps> = ({
           )}
         </View>
 
-        {/* Stock Info */}
         <View className="flex-1">
           <Text className="text-white font-bold text-base" numberOfLines={1}>
             {name}
@@ -59,7 +56,6 @@ const StockItem: React.FC<StockItemProps> = ({
         </View>
       </View>
 
-      {/* Price and Change Section */}
       <View className="items-end">
         <Text className="text-white font-bold text-base">${price}</Text>
         <View className="flex-row items-center mt-1">

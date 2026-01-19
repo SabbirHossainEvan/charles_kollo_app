@@ -2,14 +2,9 @@ import { Bell } from "lucide-react-native";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-interface HeaderProps {
-  userName: string;
-}
-
-const Header: React.FC<HeaderProps> = ({ userName }) => {
+const SimulateHeader = () => {
   return (
     <View className="px-4 py-4">
-      {/* 1. Logo Section */}
       <View className="flex-row items-center mb-4">
         <Image
           source={require("../assets/images/Logo.png")}
@@ -24,13 +19,13 @@ const Header: React.FC<HeaderProps> = ({ userName }) => {
             className="text-white text-3xl"
             style={{ fontFamily: "Oswald-Regular" }}
           >
-            Welcome back {userName}!
+            Virtual Portfolio
           </Text>
           <Text
             className="text-white/40 text-[15px] mt-1"
             style={{ fontFamily: "Inter-Regular" }}
           >
-            Here s your snapshot for today.
+            Practice trading risk-free
           </Text>
         </View>
 
@@ -45,4 +40,4 @@ const Header: React.FC<HeaderProps> = ({ userName }) => {
   );
 };
 
-export default Header;
+export default SimulateHeader;

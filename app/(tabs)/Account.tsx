@@ -71,7 +71,6 @@ const AccountSettingsScreen = () => {
           </Text>
 
           <View className="bg-[#1C1C1E]/80 rounded-[15px] overflow-hidden">
-            {/* Virtual Account Row */}
             <View className="flex-row items-center justify-between px-5 py-5 border-b border-white/5">
               <Text className="text-white text-lg font-medium">
                 Virtual account
@@ -84,7 +83,6 @@ const AccountSettingsScreen = () => {
               />
             </View>
 
-            {/* Live Trading Account Row */}
             <View className="flex-row items-center justify-between px-5 py-5">
               <Text className="text-white/50 text-lg font-medium">
                 Live trading account

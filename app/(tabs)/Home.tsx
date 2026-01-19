@@ -8,7 +8,6 @@ import React, { useState } from "react";
 import { LayoutAnimation, Platform, ScrollView, UIManager } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-// Android animation setup
 if (
   Platform.OS === "android" &&
   UIManager.setLayoutAnimationEnabledExperimental

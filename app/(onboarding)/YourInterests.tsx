@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-// Dynamic Data based on Figma
 const interestData = [
   {
     id: "1",
@@ -169,7 +168,6 @@ export default function YourInterests() {
                   <TouchableOpacity
                     onPress={() => toggleSelection(item.id)}
                     activeOpacity={0.9}
-                    // Selection color change
                     className={`py-4 px-3 rounded-[10px] mb-2 flex-row  border ${
                       isSelected
                         ? "bg-[#D4B475] border-[#D4B475]"
@@ -214,7 +212,6 @@ export default function YourInterests() {
             />
           </View>
 
-          {/* Bottom Fixed Button */}
           <View className="absolute bottom-10 left-6 right-6 ">
             <TouchableOpacity
               onPress={() => router.push("/(onboarding)/AccountReady")}

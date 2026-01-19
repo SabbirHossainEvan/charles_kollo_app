@@ -83,11 +83,9 @@ export default function StocksSection() {
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState("1D");
 
-  // Filter Notification Count
   const filterCount =
     (selectedCountries.length > 0 ? 1 : 0) + (selectedDate !== "1D" ? 1 : 0);
 
-  // Filter Logic
   const filteredStocks = useMemo(() => {
     return ALL_STOCKS.filter((stock) => {
       const matchTab = activeTab === "All" || stock.category === activeTab;
